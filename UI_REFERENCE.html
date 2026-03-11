@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your EV | Frozen UI Reference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #020617; font-family: 'Inter', sans-serif; color: #f8fafc; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+        .input-glow:focus { ring: 4px rgba(16, 185, 129, 0.2); border-color: #10b981; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+    <!-- UI REFERENCE: This file contains the structural layout of the locked Auth pages -->
+    <div class="max-w-md w-full glass-card rounded-[2rem] overflow-hidden flex flex-col border border-white/5">
+        <div class="bg-slate-900/50 p-12 text-center text-white relative border-b border-white/5">
+            <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-emerald-500/20 shadow-inner">
+                <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </div>
+            <h2 class="text-2xl font-bold tracking-tight text-slate-100">Your EV</h2>
+            <p class="text-slate-400 text-xs mt-1 font-medium">Smart EV Navigation</p>
+        </div>
+        <div class="p-10 space-y-6">
+            <div class="text-[10px] font-bold text-slate-600 uppercase tracking-widest text-center">Reference Layout Logged</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -14,6 +14,12 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  // Request logging middleware
+  app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+    next();
+  });
+
   app.use(express.json());
 
   // API Routes
@@ -45,8 +51,15 @@ async function startServer() {
     }
   });
 
+  // API 404 handler - prevent falling through to SPA fallback
+  app.all("/api/*", (req, res) => {
+    res.status(404).json({ error: `API route not found: ${req.method} ${req.url}` });
+  });
+
   // Vite middleware for development
-  if (process.env.NODE_ENV !== "production") {
+  const isProd = process.env.NODE_ENV === "production" || process.env.NODE_ENV === "prod";
+  
+  if (!isProd) {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",

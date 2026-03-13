@@ -11,7 +11,7 @@ const Explore: React.FC = () => {
     setIsLoading(true);
     setChargers('Scanning infrastructure grid...');
     try {
-      const response = await fetch('/api/chargers', {
+      const response = await fetch('api/chargers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ location: targetLoc })

@@ -109,7 +109,7 @@ const Dashboard: React.FC<Props> = ({ user, vehicle, dailyStats, onUpdateDailySt
       if (force) setInsights('Re-analyzing vehicle telemetry...');
       else setInsights('Generating fresh AI insights...');
       
-      const response = await fetch('/api/insights', {
+      const response = await fetch('api/insights', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ vehicle })

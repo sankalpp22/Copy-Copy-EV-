@@ -13,7 +13,10 @@ const __dirname = path.dirname(__filename);
 async function startServer() {
   const app = express();
   const PORT = 3000;
-
+  
+app.get("/api/test", (req, res) => {
+  res.json({ working: true });
+});
   // Request logging middleware
   app.use((req, res, next) => {
     console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);

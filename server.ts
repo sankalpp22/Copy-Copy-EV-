@@ -77,5 +77,5 @@ async function startServer() {
     console.log(`Server running on http://localhost:${PORT}`);
   });
 }
-
+console.log("Gemini key loaded:", process.env.GEMINI_API_KEY ? "YES" : "NO");
 startServer();

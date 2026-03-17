@@ -1,13 +1,13 @@
 
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { AppState, AppStep, NavSection, User, Vehicle, DailyStats } from './types';
 import AuthForm from './components/AuthForm';
 import VehicleForm from './components/VehicleForm';
 import Sidebar from './components/Sidebar';
 
-const Dashboard = lazy(() => import('./components/Dashboard'));
-const Explore = lazy(() => import('./components/Explore'));
-const Profile = lazy(() => import('./components/Profile'));
+import Dashboard from './components/Dashboard';
+import Explore from './components/Explore';
+import Profile from './components/Profile';
 
 import { auth, db } from './services/firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';

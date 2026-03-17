@@ -1,5 +1,5 @@
 {
-  "name": "Copy Copy of Your EV Manager",
+  "name": "Your EV Manager",
   "description": "A comprehensive EV management suite for tracking range, finding chargers, and AI-powered vehicle insights.",
   "requestFramePermissions": [
     "geolocation"

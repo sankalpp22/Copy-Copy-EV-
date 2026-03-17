@@ -2,16 +2,12 @@
 import { GoogleGenAI } from "@google/genai";
 import { Vehicle } from "../types";
 
-// The Gemini API key is managed server-side via process.env.GEMINI_API_KEY
-const getApiKey = () => {
-  return process.env.GEMINI_API_KEY;
-};
-
 const getAI = () => {
-  const apiKey = getApiKey();
+  const apiKey = (process.env.GEMINI_API_KEY || process.env.API_KEY || "").trim();
   if (!apiKey) {
-    throw new Error("GEMINI_API_KEY is not configured.");
+    throw new Error("Gemini API key is not configured. Please ensure GEMINI_API_KEY is set in your environment variables.");
   }
+  console.log("Gemini Service using API Key starting with:", apiKey.substring(0, 6) + "...");
   return new GoogleGenAI({ apiKey });
 };
 
